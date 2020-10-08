@@ -24,6 +24,7 @@ module.exports = function(){
     app.use(bodyParser.json());
     app.use(methodOverride());
 
+    // don't really need this for the site but it's cool so I'm leaving it in
     app.use(session({
         saveUninitialized: true,
         resave: true,

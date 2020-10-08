@@ -1,0 +1,22 @@
+<nav class="navbar">
+    <ul>
+        <!-- I found out ejs has if statements, so I'm using it to highlight the page the user is already on -->
+        <li <%if (title=='Home') {%>
+            class="active"<% } %>>
+            <a href="/">Home</a></li>
+        <li <%if (title=='About Me') {%>
+            class="active"<% } %>>
+            <a href="/about">About Me</a></li>
+        <li <%if (title=='My Projects') {%>
+            class="active"<% } %>>
+            <a href="/projects">Projects</a></li>
+        <li <%if (title=='My Services') {%>
+            class="active"<% } %>>
+            <a href="/services">Services</a></li>
+        <li <%if (title=='Contact Me') {%>
+            class="active"<% } %>>
+            <a href="/contact">Contact Me</a></li>
+        <li style="float:right">
+            <img src="img/logo.png" alt="Logo"></li>
+    </ul>
+</nav>
