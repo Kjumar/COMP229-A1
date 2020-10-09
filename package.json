@@ -1,13 +1,22 @@
 {
-    "name": "MEAN",
-    "version": "0.0.1",
-    "dependencies": {
-        "body-parser": "^1.8.4",
-        "compression": "^1.7.4",
-        "express": "^4.17.1",
-        "express-session": "^1.17.1",
-        "method-override": "^3.0.0",
-        "morgan": "^1.10.0",
-        "ejs": "~1.0.0"
-    }
+  "name": "comp229-a1",
+  "version": "0.0.1",
+  "description": "portfolio site for jay",
+  "main": "express.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kjumar/COMP229-A1.git"
+  },
+  "author": "Jay Ganguli",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kjumar/COMP229-A1/issues"
+  },
+  "homepage": "https://github.com/Kjumar/COMP229-A1#readme"
 }
