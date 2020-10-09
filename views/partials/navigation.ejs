@@ -1,6 +1,6 @@
+<!-- this is my old, non-bootstrap navbar
 <nav class="navbar">
     <ul>
-        <!-- I found out ejs has if statements, so I'm using it to highlight the page the user is already on -->
         <li <%if (title=='Home') {%>
             class="active"<% } %>>
             <a href="/">Home</a></li>
@@ -20,3 +20,36 @@
             <img src="images/logo.png" alt="Logo"></li>
     </ul>
 </nav>
+-->
+<nav class="navbar myNav navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">
+        <img src="images/logo.png" alt="Logo" width="30" height="30" class="d-inline-block align-top">Jay Ganguli's Portfolio</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+
+        <li class="nav-item <%if (title=='Home') {%>active<% } %>">
+          <a class="nav-link" href="/"><i class="fas fa-laptop-house"></i>Home</a>
+        </li>
+
+        <li class="nav-item <%if (title=='About Me') {%>active<% } %>">
+            <a class="nav-link" href="/about"><i class="fas fa-info-circle"></i>About Me</a>
+        </li>
+
+        <li class="nav-item <%if (title=='My Projects') {%>active<% } %>">
+            <a class="nav-link" href="/projects"><i class="fas fa-code"></i>Projects</a>
+        </li>
+
+        <li class="nav-item <%if (title=='My Services') {%>active<% } %>">
+            <a class="nav-link" href="/services"><i class="fas fa-cogs"></i>Services</a>
+        </li>
+
+        <li class="nav-item <%if (title=='Contact Me') {%>active<% } %>">
+            <a class="nav-link" href="/contact"><i class="fas fa-envelope"></i>Contact Me</a>
+        </li>
+
+    </div>
+  </nav>

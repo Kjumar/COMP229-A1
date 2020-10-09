@@ -6,15 +6,19 @@
     "start": "node ./server.js"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.1",
+    "body-parser": "^1.8.4",
+    "bootstrap": "^4.5.2",
+    "compression": "^1.7.4",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "ejs": "~2.6.1",
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
+    "jquery": "^3.5.1",
+    "method-override": "^3.0.0",
     "morgan": "~1.9.1",
-    "compression": "^1.7.4",
-    "body-parser": "^1.8.4",
-    "method-override": "^3.0.0"
+    "popper.js": "^1.16.1"
   },
   "description": "portfolio website for Jay",
   "main": "index.js",
