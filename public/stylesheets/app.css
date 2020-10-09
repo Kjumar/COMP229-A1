@@ -62,7 +62,7 @@ overloads for the bootstrap navbar
     background-color: #555;
 }
 /* refer to navigation.ejs for this one */
-.active {
+.myActive {
     background-color: #4caf50;
     color: white;
 }
