@@ -11,12 +11,12 @@ module.exports = function(app)
 
     // the About Me page
     app.get('/about', function(req, res) {
-        res.render('index', {title: 'About Me'});
+        res.render('about', {title: 'About Me'});
     });
 
     // the Projects page
     app.get('/projects', function(re, res) {
-        res.render('index', {title: 'My Projects'});
+        res.render('projects', {title: 'My Projects'});
     })
 
     // the Services page
