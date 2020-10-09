@@ -1,8 +1,13 @@
 module.exports = function(app)
 {
-    // the Home page. the callback is in the controller script
-    var index = require('../controllers/index.server.controller');
-    app.get('/', index.render);
+    
+    //var index = require('../controllers/index.server.controller');
+    //app.get('/', index.render);
+
+    // the Home page
+    app.get('/', function(req, res) {
+        res.render('index', {title: 'Home'});
+    });
 
     // the About Me page
     app.get('/about', function(req, res) {

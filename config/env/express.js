@@ -3,8 +3,8 @@ express = require('express'),
 morgan = require('morgan'),
 compress = require('compression'),
 bodyParser = require('body-parser'),
-methodOverride = require('method-override'),
-session = require('express-session');
+methodOverride = require('method-override');
+//session = require('express-session');
 
 module.exports = function(){
     var app = express();
@@ -24,12 +24,12 @@ module.exports = function(){
     app.use(bodyParser.json());
     app.use(methodOverride());
 
-    // don't really need this for the site but it's cool so I'm leaving it in
+    /* don't really need this for the site but it's cool so I'm leaving it in
     app.use(session({
         saveUninitialized: true,
         resave: true,
         secret: config.sessionSecret
-    }));
+    }));*/
 
     app.set('views', './app/views');
     app.set('view engine', 'ejs');
