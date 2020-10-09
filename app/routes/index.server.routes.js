@@ -21,11 +21,15 @@ module.exports = function(app)
 
     // the Services page
     app.get('/services', function(re, res) {
-        res.render('index', {title: 'My Services'});
+        res.render('services', {title: 'My Services'});
     })
 
     // the Contact Me page
     app.get('/contact', function(re, res) {
-        res.render('index', {title: 'Contact Me'});
+        res.render('contact', {
+            title: 'Contact Me',
+            email: 'jganguli@hotmail.ca',
+            phoneNum: '(+1) 289-244-5680'
+        });
     })
 };
