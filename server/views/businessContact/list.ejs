@@ -22,6 +22,7 @@
                             <th class="text-center">eMail</th>
                             <% if (typeof displayName == 'string' && displayName) { %>
                                 <th class="text-center"></th>
+                                <th class="text-center"></th>
                             <% } %>
                         </tr>
 
@@ -32,6 +33,10 @@
                                 <td class="text-center"><%= ContactList[count].number %></td>
                                 <td class="text-center"><%= ContactList[count].email %></td>
                                 <% if (typeof displayName == 'string' && displayName) { %>
+                                    <td class="text-center">
+                                        <a href="/business-contacts/update/<%= ContactList[count]._id %>" class="btn btn-warning">
+                                        <i class="fas fa-cogs"></i> Update</a>
+                                    </td>
                                     <td class="text-center">
                                         <a href="/business-contacts/confirm-delete/<%= ContactList[count]._id %>" class="btn btn-danger">
                                         <i class="fas fa-trash-alt"></i> Delete</a>

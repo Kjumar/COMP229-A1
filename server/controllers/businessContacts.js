@@ -47,6 +47,48 @@ module.exports.processAddPage = (req, res, next) => {
     });
 };
 
+module.exports.displayUpdatePage = (req, res, next) => {
+    let id = req.params.id;
+
+    ContactInfo.findById(id, (err, contactObject) => {
+        if (err)
+        {
+            return console.log(err);
+        }
+        else
+        {
+            res.render('businessContact/update', {
+                title: 'Update Contact',
+                contact: contactObject,
+                displayName: req.user ? req.user.displayName : ''
+            });
+        }
+    });
+};
+
+module.exports.processUpdatePage = (req, res, next) => {
+    let id = req.params.id;
+
+    let updatedContact = ContactInfo({
+        "_id": id,
+        "name": req.body.name,
+        "number": req.body.contactNumber,
+        "email": req.body.email
+    });
+
+    ContactInfo.updateOne({_id: id}, updatedContact, (err) => {
+        if (err)
+        {
+            console.log(err);
+            res.send(err);
+        }
+        else
+        {
+            res.redirect('/business-contacts');
+        }
+    });
+};
+
 module.exports.displayDeleteConfirmPage = (req, res, next) => {
     let id = req.params.id;
 

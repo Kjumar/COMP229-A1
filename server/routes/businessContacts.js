@@ -26,6 +26,12 @@ router.get('/add', requireAuth, contactController.displayAddPage);
 /* POST route for adding a business contact */
 router.post('/add', requireAuth, contactController.processAddPage);
 
+/* GET route for displaying the AddBusinessContact page */
+router.get('/update/:id', requireAuth, contactController.displayUpdatePage);
+
+/* POST route for adding a business contact */
+router.post('/update/:id', requireAuth, contactController.processUpdatePage);
+
 /* GET route for Delete confimration page */
 router.get('/confirm-delete/:id', requireAuth, contactController.displayDeleteConfirmPage);
 
