@@ -1,0 +1,36 @@
+<!-- Business Contact deletion confirmation page, for the secure side of the site -->
+<%- include ../partials/header.ejs %>
+
+<%- include ../partials/navigation.ejs %>
+
+    <div class="content">
+        <!-- confirm deletion content -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-offset-3 col-md-8">
+                    <h1><%= title %></h1>
+                    <br>
+                    <table class="table table-brodered table-striped table-hover">
+                        <!-- Header Row -->
+                        <tr>
+                            <th class="text-center">Name</th>
+                            <th class="text-center">Contact Number</th>
+                            <th class="text-center">eMail</th>
+                        </tr>
+
+                        <tr>
+                            <td class="text-center"><%= contact.name %></td>
+                            <td class="text-center"><%= contact.number %></td>
+                            <td class="text-center"><%= contact.email %></td>
+                        </tr>
+                    </table>
+                    <a href="/business-contacts" class="btn btn-warning">
+                        <i class="fas fa-undo"></i> Cancel</a>
+                        <a href="/business-contacts/delete/<%= contact._id %>" class="btn btn-danger">
+                            <i class="fas fa-trash-alt"></i> Delete</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<%- include ../partials/footer.ejs %>
