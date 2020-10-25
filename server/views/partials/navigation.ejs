@@ -2,7 +2,9 @@
 <!-- this navbar is built from the sample code provided on getbootstrap.com, with some minor tweaks mentioned below -->
 <nav class="navbar myNav navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="#">
-        <img src="/images/logo.png" alt="Logo" width="30" height="30" class="d-inline-block align-top">Jay Ganguli's Portfolio</a>
+        <img src="/images/logo.png" alt="Logo" width="30" height="30" class="d-inline-block align-top">Jay Ganguli's Portfolio
+        <% if (typeof displayName == 'string' && displayName) { %> Welcome <%= displayName %> <% } %>
+    </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -31,9 +33,15 @@
             <a class="nav-link" href="/contact"><i class="fas fa-envelope"></i>Contact Me</a>
         </li>
 
-        <li class="nav-item <%if (title=='Log In') {%>active myActive<% } %>">
-            <a class="nav-link" href="/login"><i class="fas fa-tools"></i>Log In</a>
-        </li>
+        <% if (typeof displayName == 'string' && displayName) { %>
+          <li class="nav-item">
+              <a class="nav-link" href="/logout"><i class="fas fa-lg fa-sign-out-alt"></i>Log Out</a>
+          </li>
+        <% } else { %>
+          <li class="nav-item <%if (title=='Log In') {%>active myActive<% } %>">
+              <a class="nav-link" href="/login"><i class="fas fa-tools"></i>Log In</a>
+          </li>
+        <% } %>
 
     </div>
   </nav>

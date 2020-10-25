@@ -9,8 +9,10 @@
             <div class="row">
                 <div class="col-md-offset-3 col-md-8">
                     <h1><%= title %></h1>
+                    <% if (typeof displayName == 'string' && displayName) { %>
                     <a href="/business-contacts/add" class="btn btn-primary" role="button">
                         <i class="fas fa-plus-circle"></i> Add Contact</a>
+                    <% } %>
                     <br>
                     <table class="table table-brodered table-striped table-hover">
                         <!-- Header Row -->
@@ -18,7 +20,9 @@
                             <th class="text-center">Name</th>
                             <th class="text-center">Contact Number</th>
                             <th class="text-center">eMail</th>
-                            <th class="text-center"></th>
+                            <% if (typeof displayName == 'string' && displayName) { %>
+                                <th class="text-center"></th>
+                            <% } %>
                         </tr>
 
                         <!-- Repeatable Template Row -->
@@ -27,10 +31,12 @@
                                 <td class="text-center"><%= ContactList[count].name %></td>
                                 <td class="text-center"><%= ContactList[count].number %></td>
                                 <td class="text-center"><%= ContactList[count].email %></td>
-                                <td class="text-center">
-                                    <a href="/business-contacts/confirm-delete/<%= ContactList[count]._id %>" class="btn btn-danger">
-                                    <i class="fas fa-trash-alt"></i> Delete</a>
-                                </td>
+                                <% if (typeof displayName == 'string' && displayName) { %>
+                                    <td class="text-center">
+                                        <a href="/business-contacts/confirm-delete/<%= ContactList[count]._id %>" class="btn btn-danger">
+                                        <i class="fas fa-trash-alt"></i> Delete</a>
+                                    </td>
+                                <% } %>
                             </tr>
                         <% } %>
                     </table>

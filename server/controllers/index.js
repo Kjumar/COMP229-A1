@@ -9,26 +9,27 @@ let userModel = require('../models/user');
 let User = userModel.User;
 
 module.exports.displayHomePage = (req, res, next) => {
-    res.render('index', {title:'Home'});
+    res.render('index', {title:'Home', displayName: req.user ? req.user.displayName : ''});
 };
 
 module.exports.displayAboutPage = (req, res, next) => {
-    res.render('index', {title:'About Me'});
+    res.render('index', {title:'About Me', displayName: req.user ? req.user.displayName : ''});
 };
 
 module.exports.displayProjectsPage = (req, res, next) => {
-    res.render('index', {title:'My Projects'});
+    res.render('index', {title:'My Projects', displayName: req.user ? req.user.displayName : ''});
 };
 
 module.exports.displayServicesPage = (req, res, next) => {
-    res.render('index', {title:'My Services'});
+    res.render('index', {title:'My Services', displayName: req.user ? req.user.displayName : ''});
 };
 
 module.exports.displayContactMePage = (req, res, next) => {
     res.render('contact', {
         title: 'Contact Me',
         email: 'jganguli@hotmail.ca',
-        phoneNum: '(+1) 289-244-5680'
+        phoneNum: '(+1) 289-244-5680',
+        displayName: req.user ? req.user.displayName : ''
     });
 };
 

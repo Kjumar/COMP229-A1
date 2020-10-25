@@ -15,14 +15,15 @@ module.exports.displayContactList = (req, res, next) => {
             // console.log(ContactList);
             res.render('businessContact/list',{
                 title: "Business Contacts",
-                ContactList: contactList
+                ContactList: contactList,
+                displayName: req.user ? req.user.displayName : ''
             });
         }
     })
 };
 
 module.exports.displayAddPage = (req, res, next) => {
-    res.render('businessContact/add', {title: 'Add Business Contact'})
+    res.render('businessContact/add', {title: 'Add Business Contact', displayName: req.user ? req.user.displayName : ''})
 };
 
 module.exports.processAddPage = (req, res, next) => {
@@ -59,7 +60,8 @@ module.exports.displayDeleteConfirmPage = (req, res, next) => {
             // delete contact info
             res.render('businessContact/confirm-delete',{
                 title: "Confirm Delete Action",
-                contact: contactObject
+                contact: contactObject,
+                displayName: req.user ? req.user.displayName : ''
             });
         }
     });
