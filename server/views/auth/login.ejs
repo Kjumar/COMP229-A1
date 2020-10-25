@@ -7,7 +7,7 @@
         <div class="content">
             <h1><%= title %></h1>
             <!-- authentication message area -->
-            <%if(message.length > 0) {%>
+            <%if(messages.length > 0) {%>
                 <div class="alert alert-danger">
                     <%= messages %>
                 </div>
@@ -15,7 +15,7 @@
 
             <div class="row">
                 <div class="offset-md-4 col-md-4">
-                    <h1>Please Login</h1>
+                    <h2>Please Login</h2>
                     <form method="POST" autocomplete="off">
                         <fieldset class="form-group">
                             <label for="username">
@@ -38,7 +38,7 @@
                         <fieldset class="form-group text-right">
                             <input type="submit" class="btn btn-success" value="Login">
                             <a href="/">
-                                <input type="button" class="btn btn-warning" calue="Cancel">
+                                <input type="button" class="btn btn-warning" value="Cancel">
                             </a>
                         </fieldset>
                     </form>
