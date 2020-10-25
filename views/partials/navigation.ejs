@@ -1,26 +1,5 @@
-<!-- this is my old, non-bootstrap navbar
-<nav class="navbar">
-    <ul>
-        <li <%if (title=='Home') {%>
-            class="active"<% } %>>
-            <a href="/">Home</a></li>
-        <li <%if (title=='About Me') {%>
-            class="active"<% } %>>
-            <a href="/about">About Me</a></li>
-        <li <%if (title=='My Projects') {%>
-            class="active"<% } %>>
-            <a href="/projects">Projects</a></li>
-        <li <%if (title=='My Services') {%>
-            class="active"<% } %>>
-            <a href="/services">Services</a></li>
-        <li <%if (title=='Contact Me') {%>
-            class="active"<% } %>>
-            <a href="/contact">Contact Me</a></li>
-        <li style="float:right">
-            <img src="images/logo.png" alt="Logo"></li>
-    </ul>
-</nav>
--->
+
+<!-- this navbar is built from the sample code provided on getbootstrap.com, with some minor tweaks mentioned below -->
 <nav class="navbar myNav navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="#">
         <img src="images/logo.png" alt="Logo" width="30" height="30" class="d-inline-block align-top">Jay Ganguli's Portfolio</a>
@@ -31,6 +10,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto">
 
+        <!-- ejs if statement checks the title of the page and sets the 'active' highlighting classes accordingly. Highlights the page we are on -->
         <li class="nav-item <%if (title=='Home') {%>active myActive<% } %>">
           <a class="nav-link" href="/"><i class="fas fa-laptop-house"></i>Home</a>
         </li>
@@ -49,6 +29,10 @@
 
         <li class="nav-item <%if (title=='Contact Me') {%>active myActive<% } %>">
             <a class="nav-link" href="/contact"><i class="fas fa-envelope"></i>Contact Me</a>
+        </li>
+
+        <li class="nav-item <%if (title=='Login') {%>active myActive<% } %>">
+            <a class="nav-link" href="/login"><i class="fas fa-envelope"></i>Contact Me</a>
         </li>
 
     </div>

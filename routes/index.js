@@ -30,4 +30,9 @@ router.get('/contact', function(re, res, next) {
   });
 });
 
+// the login page
+router.get('/contact', function(re, res, next) {
+  res.render('contact', {title: 'Login'});
+});
+
 module.exports = router;
